@@ -40,7 +40,9 @@ jobs:
             -Dsonar.projectKey=shiksha-admin \
             -Dsonar.sources=. \
             -Dsonar.host.url=http://localhost:9000 \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}\
+            -Dsonar.exclusions=**/*.jar,**/*.zip,**/*.vsix,**/*.dll,**/*.exe,C:/Users/ishan/Application\ Data/** \
+            -Dsonar.scanner.largeFiles=30MB
 
       - name: Deploy Application
         run: |
